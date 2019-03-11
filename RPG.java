@@ -16,7 +16,7 @@ public class RPG {
 
 		System.out.println("ーーーーーーーバトル開始ーーーーーーーー");
 
-		c1.attack();
-		c3.damage(c1.power);
+		//c1がc3へ攻撃
+		c1.attack(c3);
 	}
 }
