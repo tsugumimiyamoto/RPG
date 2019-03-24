@@ -1,20 +1,27 @@
 
 public class RPG {
+
 	public static void main(String [] args) {
+		Character [] mouse=new Character [2];
+		Character [] duck=new Character [2];
+
 		//キャラクター＝名前、体力、攻撃力、魔力
-		Character c1=new Brave("ミッキー",100,30,90);
-		Character c2=new Wicth("ミニー",80,20,50);
-		Character c3=new Gunman("ドナルド",90,40,80);
-		Character c4=new Fairy("アリエル",50,30,80);
-		//自己紹介
-		c1.introduce();
-		c2.introduce();
-		c3.introduce();
-		c4.introduce();
-		//バトル
-		System.out.println("ーーーーーーバトル開始ーーーーーーー");
-		c3.attack(c1);
-		System.out.println();
-		c1.attack(c3);
+		mouse [0]=new Brave("ミッキー",100,30,90);
+		mouse [1]=new Witch("ミニー",80,20,50);
+		duck [0]=new Gunman("ドナルド",90,40,80);
+		duck [1]=new Fairy("デイジー",50,30,80);
+
+		//自己紹介・バトル
+			for(int i=0; i<mouse.length; i++) {
+				System.out.println("【TEAM mouse】");
+				mouse [i].introduce();
+				mouse[i].attack(duck[i]);
+			}
+			System.out.println("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー");
+			for(int j=0; j<duck.length; j++) {
+				System.out.println("【TEAM duck】");
+				duck [j].introduce();
+				duck[j].attack(mouse[j]);
+			}
 	}
 }
