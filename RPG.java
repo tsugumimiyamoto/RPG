@@ -12,16 +12,15 @@ public class RPG {
 		duck [1]=new Fairy("デイジー",50,30,80);
 
 		//自己紹介・バトル
-			for(int i=0; i<mouse.length; i++) {
+		for(int i=0; i<mouse.length; i++) {
+			for(int j=0; j<duck.length; j++){
 				System.out.println("【TEAM mouse】");
 				mouse [i].introduce();
-				mouse[i].attack(duck[i]);
-			}
-			System.out.println("ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー");
-			for(int j=0; j<duck.length; j++) {
+				mouse[i].attack(duck[j]);
 				System.out.println("【TEAM duck】");
 				duck [j].introduce();
-				duck[j].attack(mouse[j]);
+				duck[j].attack(mouse[i]);
 			}
+		}
 	}
 }
